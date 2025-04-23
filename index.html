@@ -1,97 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ravi Kalakoti | Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #007acc;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #007acc;
-    }
-    .project {
-      background: white;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #f0f0f0;
-      color: #666;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Singh Kalakoti - Python Django Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .header a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .profile-summary, .skills, .experience, .projects, .education, .certifications {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .skills ul, .projects ul {
+            padding-left: 20px;
+        }
+        .experience ul, .projects ul, .education ul, .certifications ul {
+            padding-left: 20px;
+        }
+        .experience li, .projects li, .education li, .certifications li {
+            margin-bottom: 10px;
+        }
+        img.profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Ravi Kalakoti</h1>
-    <p>Backend Developer | Python & Django | REST APIs | Azure | Freelancing</p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a Python/Django backend developer with over 4 years of experience building REST APIs, deploying projects using Docker and Azure, and working on freelance projects from home.
-    </p>
+<div class="header">
+    <img src="YOUR_IMAGE_URL" alt="Profile Image" class="profile-img">
+    <h1>Ravi Singh Kalakoti</h1>
+    <p>Python Django Developer</p>
+    <p>📍 Noida, India | 📞 +91 7060474650 | 📧 <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a></p>
+    <p>🔗 <a href="https://linkedin.com/in/ravi-kalakoti" target="_blank">LinkedIn</a></p>
+</div>
 
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>📸 BookMyCamera</h3>
-      <p>A Django-based platform for photographers in Uttarakhand to register and accept bookings.</p>
-    </div>
-    <div class="project">
-      <h3>🧭 Breakuru</h3>
-      <p>iOS app for trip planning powered by Django REST APIs.</p>
-    </div>
-    <div class="project">
-      <h3>🔐 Vault</h3>
-      <p>Document filtering APIs for financial institutions (K1, CAS, FS documents).</p>
-    </div>
+<div class="profile-summary">
+    <h2 class="section-title">Profile Summary</h2>
+    <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
+</div>
 
-    <h2>Skills</h2>
+<div class="skills">
+    <h2 class="section-title">Skills & Technologies</h2>
     <ul>
-      <li>Python, Django, FastAPI</li>
-      <li>SQL, Pandas, NumPy</li>
-      <li>Docker, GitHub Actions, Azure</li>
-      <li>Power BI, Excel (beginner)</li>
+        <li>Backend Development: Python, Django, Django REST Framework</li>
+        <li>Frontend Technologies: HTML, CSS, JavaScript, Bootstrap, AJAX</li>
+        <li>Databases: PostgreSQL, MySQL, SQLite</li>
+        <li>API Development: RESTful APIs, Third-party API Integration, Payment Gateways</li>
+        <li>Tools: Tkinter, Data Analytics, AWS S3, Docker, Git, CI/CD, Unit Testing, Cloud Deployments</li>
     </ul>
+</div>
 
-    <h2>Contact</h2>
-    <p>
-      📧 Email: ravikalakoti@example.com<br />
-      🔗 GitHub: <a href="https://github.com/Ravikalakoti" target="_blank">github.com/Ravikalakoti</a><br />
-      🌐 Portfolio: <a href="https://ravikalakoti.github.io/" target="_blank">ravikalakoti.github.io</a>
-    </p>
-  </section>
+<div class="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <ul>
+        <li><strong>Python Django Developer</strong> at Technoarch Softwares Pvt. Ltd. (Dec 2020 - Present)</li>
+        <li><strong>Freelance Python Django Developer</strong> (June 2024 - February 2025)</li>
+    </ul>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Ravi Kalakoti</p>
-  </footer>
+<div class="projects">
+    <h2 class="section-title">Projects</h2>
+    <ul>
+        <li><strong>Breadkrumb:</strong> Travel app for storing memories and visualizing journeys on a map.</li>
+        <li><strong>Contrax:</strong> Legal tech platform for real estate transactions (Website: <a href="https://contrax.com.au" target="_blank">contrax.com.au</a>).</li>
+        <li><strong>United Global Security:</strong> Security management app for shift tracking and incident reporting (Website: <a href="https://sp.opskube.com" target="_blank">sp.opskube.com</a>).</li>
+        <li><strong>Adhaan HRMS:</strong> HRMS system for employee onboarding, payroll, and performance tracking.</li>
+        <li><strong>Petrimedca:</strong> E-commerce app integrated with ShipRocket and Razorpay (Website: <a href="http://www.petrimedca.com" target="_blank">petrimedca.com</a>).</li>
+    </ul>
+</div>
+
+<div class="education">
+    <h2 class="section-title">Education</h2>
+    <ul>
+        <li>B.Tech/B.E. from Dev Bhoomi Institute of Technology & Engineering (2019)</li>
+        <li>12th (Hindi Medium, 2013)</li>
+        <li>10th (Hindi Medium, 2011)</li>
+    </ul>
+</div>
+
+<div class="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <ul>
+        <li>Python Programming - Advanced Level</li>
+        <li>Django Framework - API Development & Security</li>
+        <li>Data Science & Analytics Fundamentals</li>
+    </ul>
+</div>
+
+<div class="contact-info">
+    <p>🗣 Languages: English (Professional Proficiency), Hindi (Native Proficiency)</p>
+</div>
+
 </body>
 </html>
