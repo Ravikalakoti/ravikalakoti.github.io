@@ -7,6 +7,7 @@
     <title>Ravi Singh Kalakoti - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Basic Styles */
         * {
             margin: 0;
             padding: 0;
@@ -15,116 +16,178 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #f8f8f8;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 60px 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 120px 0;
+            position: relative;
         }
 
         header h1 {
             font-size: 3em;
-            margin-bottom: 10px;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
 
+        /* Hero Image */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('profile.jpg'); /* Add your image path here */
+            background-position: center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* Container */
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 40px auto;
         }
 
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Profile Section */
         .profile {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 40px;
             text-align: center;
+            margin-bottom: 40px;
         }
 
         .profile img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            margin-right: 30px;
             border: 5px solid #fff;
+            margin-right: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .profile h2 {
-            font-size: 2em;
-            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
 
         .profile p {
-            color: #777;
-            margin-top: 10px;
-        }
-
-        .about, .experience, .skills, .projects {
-            background-color: white;
-            margin-bottom: 40px;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-
-        .about p {
             font-size: 1.1em;
-            line-height: 1.6;
             color: #555;
         }
 
-        .experience ul, .projects ul {
-            list-style-type: none;
-            margin-top: 20px;
-        }
-
-        .experience li, .projects li {
-            padding: 10px 0;
-            font-size: 1.1em;
-            color: #444;
-            border-bottom: 1px solid #ddd;
-        }
-
+        /* Skills Section */
         .skills {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 40px;
         }
 
         .skill {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 1.2em;
             border-radius: 20px;
-            margin: 5px;
-            font-size: 1.1em;
-            text-transform: capitalize;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        /* Project Section */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project {
+            width: 30%;
+            margin: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project .content {
+            padding: 20px;
+        }
+
+        .project h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Footer */
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+
+        footer p {
+            font-size: 1.1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project {
+                width: 45%;
+            }
+
+            .profile {
+                flex-direction: column;
+            }
+
+            .profile img {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -150,19 +213,10 @@
             </div>
         </div>
 
-        <!-- About Me Section -->
+        <!-- About Section -->
         <div class="about">
             <div class="section-title">About Me</div>
             <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
-        </div>
-
-        <!-- Experience Section -->
-        <div class="experience">
-            <div class="section-title">Experience</div>
-            <ul>
-                <li><strong>Python Django Developer</strong> at Technoarch Softwares Pvt. Ltd. | Dec 2020 - Present</li>
-                <li><strong>Freelance Python Django Developer</strong> | June 2024 - February 2025</li>
-            </ul>
         </div>
 
         <!-- Skills Section -->
@@ -180,14 +234,28 @@
 
         <!-- Projects Section -->
         <div class="projects">
-            <div class="section-title">Projects</div>
-            <ul>
-                <li><strong>Breadkrumb:</strong> A travel app to store memories and visualize journeys.</li>
-                <li><strong>Contrax:</strong> A legal tech platform for real estate transactions.</li>
-                <li><strong>United Global Security:</strong> A security management app for shift tracking.</li>
-                <li><strong>Adhaan HRMS:</strong> An HR system for employee onboarding and payroll.</li>
-                <li><strong>Petrimedca:</strong> An e-commerce site integrated with payment gateways.</li>
-            </ul>
+            <div class="section-title">Featured Projects</div>
+            <div class="project">
+                <img src="https://via.placeholder.com/400" alt="Project 1">
+                <div class="content">
+                    <h3>Breadkrumb</h3>
+                    <p>A travel app for storing memories and visualizing journeys on an interactive map.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/400" alt="Project 2">
+                <div class="content">
+                    <h3>Contrax</h3>
+                    <p>A legal tech platform to streamline real estate transactions.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/400" alt="Project 3">
+                <div class="content">
+                    <h3>United Global Security</h3>
+                    <p>A security management app for shift tracking and incident reporting.</p>
+                </div>
+            </div>
         </div>
 
     </div>
