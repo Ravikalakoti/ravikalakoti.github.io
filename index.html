@@ -1,147 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ravi Singh Kalakoti - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f7f7f7;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 30px 0;
+            padding: 60px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         header h1 {
-            margin: 0;
             font-size: 3em;
+            margin-bottom: 10px;
         }
+
         header p {
             font-size: 1.2em;
         }
+
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 40px auto;
         }
-        .profile-section {
-            text-align: center;
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 40px;
+            text-align: center;
         }
-        .profile-section img {
+
+        .profile img {
             width: 150px;
+            height: 150px;
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-right: 30px;
+            border: 5px solid #fff;
         }
+
+        .profile h2 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .profile p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .about, .experience, .skills, .projects {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
         .section-title {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 2em;
+            font-size: 2.5em;
             color: #4CAF50;
-        }
-        .about-me, .experience, .technologies, .projects {
-            background-color: white;
-            padding: 20px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .about p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
         .experience ul, .projects ul {
             list-style-type: none;
-            padding: 0;
+            margin-top: 20px;
         }
+
         .experience li, .projects li {
-            padding: 5px 0;
+            padding: 10px 0;
+            font-size: 1.1em;
+            color: #444;
+            border-bottom: 1px solid #ddd;
         }
-        .technologies {
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
-        .technology {
+
+        .skill {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border-radius: 20px;
             margin: 5px;
             font-size: 1.1em;
+            text-transform: capitalize;
         }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             position: fixed;
             width: 100%;
             bottom: 0;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Ravi Singh Kalakoti</h1>
-    <p>Python Django Developer</p>
-</header>
+    <!-- Header -->
+    <header>
+        <h1>Ravi Singh Kalakoti</h1>
+        <p>Python Django Developer</p>
+    </header>
 
-<div class="container">
-    <!-- Profile Section -->
-    <div class="profile-section">
-        <img src="profile.jpg" alt="Ravi Singh Kalakoti">
-        <p>📍 Noida, India | 📞 +91 7060474650 | 📧 ravikalakoti16@gmail.com</p>
-        <p>🔗 LinkedIn: <a href="https://linkedin.com/in/ravi-kalakoti" target="_blank">linkedin.com/in/ravi-kalakoti</a></p>
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <img src="profile.jpg" alt="Ravi Singh Kalakoti">
+            <div>
+                <h2>Ravi Singh Kalakoti</h2>
+                <p>📍 Noida, India | 📞 +91 7060474650 | 📧 ravikalakoti16@gmail.com</p>
+                <p>🔗 <a href="https://linkedin.com/in/ravi-kalakoti" target="_blank">LinkedIn Profile</a></p>
+            </div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="about">
+            <div class="section-title">About Me</div>
+            <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience">
+            <div class="section-title">Experience</div>
+            <ul>
+                <li><strong>Python Django Developer</strong> at Technoarch Softwares Pvt. Ltd. | Dec 2020 - Present</li>
+                <li><strong>Freelance Python Django Developer</strong> | June 2024 - February 2025</li>
+            </ul>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills">
+            <div class="section-title">Technologies I Know</div>
+            <div class="skill">Python</div>
+            <div class="skill">Django</div>
+            <div class="skill">Django REST Framework</div>
+            <div class="skill">PostgreSQL</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Docker</div>
+            <div class="skill">Git</div>
+            <div class="skill">CI/CD</div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects">
+            <div class="section-title">Projects</div>
+            <ul>
+                <li><strong>Breadkrumb:</strong> A travel app to store memories and visualize journeys.</li>
+                <li><strong>Contrax:</strong> A legal tech platform for real estate transactions.</li>
+                <li><strong>United Global Security:</strong> A security management app for shift tracking.</li>
+                <li><strong>Adhaan HRMS:</strong> An HR system for employee onboarding and payroll.</li>
+                <li><strong>Petrimedca:</strong> An e-commerce site integrated with payment gateways.</li>
+            </ul>
+        </div>
+
     </div>
 
-    <!-- About Me Section -->
-    <div class="about-me">
-        <div class="section-title">About Me</div>
-        <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
-    </div>
-
-    <!-- Experience Section -->
-    <div class="experience">
-        <div class="section-title">Experience</div>
-        <ul>
-            <li><strong>Python Django Developer</strong> - Technoarch Softwares Pvt. Ltd. (Dec 2020 - Present)</li>
-            <li><strong>Freelance Python Django Developer</strong> (June 2024 - February 2025)</li>
-        </ul>
-    </div>
-
-    <!-- Technologies Section -->
-    <div class="technologies">
-        <div class="section-title">Technologies I Know</div>
-        <div class="technology">Python</div>
-        <div class="technology">Django</div>
-        <div class="technology">Django REST Framework</div>
-        <div class="technology">PostgreSQL</div>
-        <div class="technology">MySQL</div>
-        <div class="technology">Docker</div>
-        <div class="technology">Git</div>
-        <div class="technology">CI/CD</div>
-    </div>
-
-    <!-- Projects Section -->
-    <div class="projects">
-        <div class="section-title">Projects</div>
-        <ul>
-            <li><strong>Breadkrumb</strong> - A travel app that allows users to store memories and visualize journeys.</li>
-            <li><strong>Contrax</strong> - A legal tech platform to streamline real estate transactions.</li>
-            <li><strong>United Global Security</strong> - A security management app for shift tracking and incident reporting.</li>
-            <li><strong>Adhaan HRMS</strong> - An HR management system with features for payroll, onboarding, and performance tracking.</li>
-            <li><strong>Petrimedca</strong> - An e-commerce platform integrated with payment gateways and inventory management.</li>
-        </ul>
-    </div>
-</div>
-
-<footer>
-    <p>© 2025 Ravi Singh Kalakoti | Python Django Developer</p>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Ravi Singh Kalakoti | Python Django Developer</p>
+    </footer>
 
 </body>
+
 </html>
