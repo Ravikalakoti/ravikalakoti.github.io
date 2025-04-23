@@ -1,137 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ravi Singh Kalakoti - Python Django Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7fa;
+            background-color: #f4f7fb;
             color: #333;
         }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
         .header {
             text-align: center;
             padding: 40px 20px;
-            background-color: #333;
+            background-color: #2f4f4f;
             color: white;
+            border-radius: 8px;
+            margin-top: 30px;
         }
+
         .header h1 {
+            font-size: 48px;
             margin: 0;
-            font-size: 36px;
+            letter-spacing: 2px;
         }
+
         .header p {
-            margin: 5px 0;
             font-size: 18px;
+            margin: 5px 0;
         }
+
         .header a {
             color: #1e90ff;
             text-decoration: none;
         }
-        .profile-summary, .skills, .experience, .projects, .education, .certifications {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: white;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-        .section-title {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .skills ul, .projects ul {
-            padding-left: 20px;
-        }
-        .experience ul, .projects ul, .education ul, .certifications ul {
-            padding-left: 20px;
-        }
-        .experience li, .projects li, .education li, .certifications li {
-            margin-bottom: 10px;
-        }
-        img.profile-img {
-            width: 150px;
-            height: 150px;
+
+        .header img {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            object-fit: cover;
             margin-bottom: 20px;
+            object-fit: cover;
+            border: 3px solid white;
         }
+
+        section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2f4f4f;
+            border-bottom: 3px solid #1e90ff;
+            padding-bottom: 5px;
+        }
+
+        .section-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills ul,
+        .projects ul,
+        .education ul,
+        .certifications ul {
+            padding-left: 20px;
+        }
+
+        .skills li,
+        .projects li,
+        .education li,
+        .certifications li {
+            margin-bottom: 12px;
+        }
+
+        .skills li::before,
+        .projects li::before,
+        .education li::before,
+        .certifications li::before {
+            content: "✔️";
+            margin-right: 10px;
+            color: #1e90ff;
+        }
+
         .contact-info {
-            font-size: 18px;
             text-align: center;
+            font-size: 18px;
+            margin-top: 40px;
+        }
+
+        .contact-info a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .footer {
+            background-color: #2f4f4f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 8px;
         }
     </style>
 </head>
+
 <body>
 
-<div class="header">
-    <img src="YOUR_IMAGE_URL" alt="Profile Image" class="profile-img">
-    <h1>Ravi Singh Kalakoti</h1>
-    <p>Python Django Developer</p>
-    <p>📍 Noida, India | 📞 +91 7060474650 | 📧 <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a></p>
-    <p>🔗 <a href="https://linkedin.com/in/ravi-kalakoti" target="_blank">LinkedIn</a></p>
-</div>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="YOUR_IMAGE_URL" alt="Profile Image">
+            <h1>Ravi Singh Kalakoti</h1>
+            <p>Python Django Developer</p>
+            <p>📍 Noida, India | 📞 +91 7060474650 | 📧 <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a></p>
+            <p>🔗 <a href="https://linkedin.com/in/ravi-kalakoti" target="_blank">LinkedIn</a></p>
+        </div>
 
-<div class="profile-summary">
-    <h2 class="section-title">Profile Summary</h2>
-    <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
-</div>
+        <!-- Profile Summary Section -->
+        <section>
+            <div class="section-title">Profile Summary</div>
+            <div class="section-content">
+                <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
+            </div>
+        </section>
 
-<div class="skills">
-    <h2 class="section-title">Skills & Technologies</h2>
-    <ul>
-        <li>Backend Development: Python, Django, Django REST Framework</li>
-        <li>Frontend Technologies: HTML, CSS, JavaScript, Bootstrap, AJAX</li>
-        <li>Databases: PostgreSQL, MySQL, SQLite</li>
-        <li>API Development: RESTful APIs, Third-party API Integration, Payment Gateways</li>
-        <li>Tools: Tkinter, Data Analytics, AWS S3, Docker, Git, CI/CD, Unit Testing, Cloud Deployments</li>
-    </ul>
-</div>
+        <!-- Skills Section -->
+        <section>
+            <div class="section-title">Skills & Technologies</div>
+            <div class="section-content">
+                <ul class="skills">
+                    <li>Backend Development: Python, Django, Django REST Framework</li>
+                    <li>Frontend: HTML, CSS, JavaScript, Bootstrap, AJAX</li>
+                    <li>Databases: PostgreSQL, MySQL, SQLite</li>
+                    <li>API Development: RESTful APIs, Third-party API Integration, Payment Gateways</li>
+                    <li>Tools: Tkinter, Data Analytics, AWS S3, Docker, Git, CI/CD, Unit Testing, Cloud Deployments</li>
+                </ul>
+            </div>
+        </section>
 
-<div class="experience">
-    <h2 class="section-title">Work Experience</h2>
-    <ul>
-        <li><strong>Python Django Developer</strong> at Technoarch Softwares Pvt. Ltd. (Dec 2020 - Present)</li>
-        <li><strong>Freelance Python Django Developer</strong> (June 2024 - February 2025)</li>
-    </ul>
-</div>
+        <!-- Work Experience Section -->
+        <section>
+            <div class="section-title">Work Experience</div>
+            <div class="section-content">
+                <ul class="experience">
+                    <li><strong>Python Django Developer</strong> at Technoarch Softwares Pvt. Ltd. (Dec 2020 - Present)</li>
+                    <li><strong>Freelance Python Django Developer</strong> (June 2024 - February 2025)</li>
+                </ul>
+            </div>
+        </section>
 
-<div class="projects">
-    <h2 class="section-title">Projects</h2>
-    <ul>
-        <li><strong>Breadkrumb:</strong> Travel app for storing memories and visualizing journeys on a map.</li>
-        <li><strong>Contrax:</strong> Legal tech platform for real estate transactions (Website: <a href="https://contrax.com.au" target="_blank">contrax.com.au</a>).</li>
-        <li><strong>United Global Security:</strong> Security management app for shift tracking and incident reporting (Website: <a href="https://sp.opskube.com" target="_blank">sp.opskube.com</a>).</li>
-        <li><strong>Adhaan HRMS:</strong> HRMS system for employee onboarding, payroll, and performance tracking.</li>
-        <li><strong>Petrimedca:</strong> E-commerce app integrated with ShipRocket and Razorpay (Website: <a href="http://www.petrimedca.com" target="_blank">petrimedca.com</a>).</li>
-    </ul>
-</div>
+        <!-- Projects Section -->
+        <section>
+            <div class="section-title">Projects</div>
+            <div class="section-content">
+                <ul class="projects">
+                    <li><strong>Breadkrumb:</strong> A travel app that stores memories and visualizes journeys on a map.</li>
+                    <li><strong>Contrax:</strong> Legal tech platform for real estate transactions. <a href="https://contrax.com.au" target="_blank">Website</a></li>
+                    <li><strong>United Global Security:</strong> A security management app for shift tracking and incident reporting. <a href="https://sp.opskube.com" target="_blank">Website</a></li>
+                    <li><strong>Adhaan HRMS:</strong> HRMS system for employee onboarding and payroll management.</li>
+                    <li><strong>Petrimedca:</strong> E-commerce app integrated with ShipRocket and Razorpay. <a href="http://www.petrimedca.com" target="_blank">Website</a></li>
+                </ul>
+            </div>
+        </section>
 
-<div class="education">
-    <h2 class="section-title">Education</h2>
-    <ul>
-        <li>B.Tech/B.E. from Dev Bhoomi Institute of Technology & Engineering (2019)</li>
-        <li>12th (Hindi Medium, 2013)</li>
-        <li>10th (Hindi Medium, 2011)</li>
-    </ul>
-</div>
+        <!-- Education Section -->
+        <section>
+            <div class="section-title">Education</div>
+            <div class="section-content">
+                <ul class="education">
+                    <li>B.Tech/B.E. from Dev Bhoomi Institute of Technology & Engineering (2019)</li>
+                    <li>12th (Hindi Medium, 2013)</li>
+                    <li>10th (Hindi Medium, 2011)</li>
+                </ul>
+            </div>
+        </section>
 
-<div class="certifications">
-    <h2 class="section-title">Certifications</h2>
-    <ul>
-        <li>Python Programming - Advanced Level</li>
-        <li>Django Framework - API Development & Security</li>
-        <li>Data Science & Analytics Fundamentals</li>
-    </ul>
-</div>
+        <!-- Certifications Section -->
+        <section>
+            <div class="section-title">Certifications</div>
+            <div class="section-content">
+                <ul class="certifications">
+                    <li>Python Programming - Advanced Level</li>
+                    <li>Django Framework - API Development & Security</li>
+                    <li>Data Science & Analytics Fundamentals</li>
+                </ul>
+            </div>
+        </section>
 
-<div class="contact-info">
-    <p>🗣 Languages: English (Professional Proficiency), Hindi (Native Proficiency)</p>
-</div>
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <p>🗣 Languages: English (Professional Proficiency), Hindi (Native Proficiency)</p>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2025 Ravi Singh Kalakoti | All Rights Reserved</p>
+        </div>
+    </div>
 
 </body>
+
 </html>
