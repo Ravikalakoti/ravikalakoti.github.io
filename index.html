@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
-            background-color: #f8f8f8;
+            background-color: #f7f7f7;
             color: #333;
             line-height: 1.6;
         }
@@ -25,48 +25,11 @@
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 120px 0;
-            position: relative;
+            padding: 80px 0;
         }
 
         header h1 {
             font-size: 3em;
-        }
-
-        header p {
-            font-size: 1.3em;
-        }
-
-        /* Hero Image */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('profile.jpg'); /* Add your image path here */
-            background-position: center;
-            background-size: cover;
-            opacity: 0.2;
-            z-index: -1;
-        }
-
-        /* Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         /* Profile Section */
@@ -74,87 +37,105 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
             text-align: center;
-            margin-bottom: 40px;
         }
 
         .profile img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 5px solid #fff;
-            margin-right: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
 
         .profile h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            color: #333;
         }
 
         .profile p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Experience & Skills Section */
+        .experience-skills {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .experience, .skills {
+            width: 40%;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-content {
             font-size: 1.1em;
             color: #555;
         }
 
-        /* Skills Section */
-        .skills {
+        /* Project Count Section */
+        .project-count {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-top: 40px;
         }
 
-        .skill {
+        .project-count div {
+            width: 150px;
+            margin: 10px;
+            padding: 20px;
             background-color: #4CAF50;
             color: white;
-            padding: 12px 24px;
-            margin: 10px;
-            font-size: 1.2em;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Project Section */
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .project {
-            width: 30%;
-            margin: 15px;
-            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
         }
 
-        .project:hover {
-            transform: translateY(-10px);
-        }
-
-        .project img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project .content {
-            padding: 20px;
-        }
-
-        .project h3 {
-            font-size: 1.8em;
+        .project-count div h3 {
+            font-size: 2em;
             margin-bottom: 10px;
         }
 
-        .project p {
+        .project-count div p {
             font-size: 1.1em;
-            color: #777;
+        }
+
+        /* Contact Section */
+        .contact {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .contact div {
+            width: 300px;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact div h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .contact div p {
+            font-size: 1.2em;
         }
 
         /* Footer */
@@ -163,31 +144,11 @@
             color: white;
             text-align: center;
             padding: 20px;
+            margin-top: 40px;
         }
 
         footer p {
             font-size: 1.1em;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .project {
-                width: 45%;
-            }
-
-            .profile {
-                flex-direction: column;
-            }
-
-            .profile img {
-                margin-bottom: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .project {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -200,64 +161,58 @@
         <p>Python Django Developer</p>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
+    <!-- Profile Section -->
+    <div class="profile">
+        <img src="profile.jpg" alt="Ravi Singh Kalakoti"> <!-- Replace with your image path -->
+        <h2>Ravi Singh Kalakoti</h2>
+        <p>Python Django Developer | 4 Years of Experience</p>
+    </div>
 
-        <!-- Profile Section -->
-        <div class="profile">
-            <img src="profile.jpg" alt="Ravi Singh Kalakoti">
-            <div>
-                <h2>Ravi Singh Kalakoti</h2>
-                <p>📍 Noida, India | 📞 +91 7060474650 | 📧 ravikalakoti16@gmail.com</p>
-                <p>🔗 <a href="https://linkedin.com/in/ravi-kalakoti" target="_blank">LinkedIn Profile</a></p>
+    <!-- Experience & Skills Section -->
+    <div class="experience-skills">
+        <div class="experience">
+            <div class="section-title">Experience</div>
+            <div class="section-content">
+                <p>4 years of experience working with Python, Django, and RESTful API development. Proficient in building scalable applications and integrating third-party services.</p>
             </div>
         </div>
 
-        <!-- About Section -->
-        <div class="about">
-            <div class="section-title">About Me</div>
-            <p>Experienced Python Django Developer with 4 years of expertise in RESTful API development, web applications, and database management. Proficient in integrating third-party APIs, payment gateways, and frontend technologies. Passionate about writing clean, scalable, and efficient code while continuously improving technical skills.</p>
-        </div>
-
-        <!-- Skills Section -->
         <div class="skills">
-            <div class="section-title">Technologies I Know</div>
-            <div class="skill">Python</div>
-            <div class="skill">Django</div>
-            <div class="skill">Django REST Framework</div>
-            <div class="skill">PostgreSQL</div>
-            <div class="skill">MySQL</div>
-            <div class="skill">Docker</div>
-            <div class="skill">Git</div>
-            <div class="skill">CI/CD</div>
-        </div>
-
-        <!-- Projects Section -->
-        <div class="projects">
-            <div class="section-title">Featured Projects</div>
-            <div class="project">
-                <img src="https://via.placeholder.com/400" alt="Project 1">
-                <div class="content">
-                    <h3>Breadkrumb</h3>
-                    <p>A travel app for storing memories and visualizing journeys on an interactive map.</p>
-                </div>
-            </div>
-            <div class="project">
-                <img src="https://via.placeholder.com/400" alt="Project 2">
-                <div class="content">
-                    <h3>Contrax</h3>
-                    <p>A legal tech platform to streamline real estate transactions.</p>
-                </div>
-            </div>
-            <div class="project">
-                <img src="https://via.placeholder.com/400" alt="Project 3">
-                <div class="content">
-                    <h3>United Global Security</h3>
-                    <p>A security management app for shift tracking and incident reporting.</p>
-                </div>
+            <div class="section-title">Skills</div>
+            <div class="section-content">
+                <ul>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>Django REST Framework</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>Docker</li>
+                    <li>Git</li>
+                    <li>CI/CD</li>
+                </ul>
             </div>
         </div>
+    </div>
 
+    <!-- Project Count Section -->
+    <div class="project-count">
+        <div>
+            <h3>15+</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div>
+            <h3>5+</h3>
+            <p>Client Projects</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <div>
+            <h3>Contact</h3>
+            <p>Email: ravikalakoti16@gmail.com</p>
+            <p>Phone: +91 7060474650</p>
+        </div>
     </div>
 
     <!-- Footer -->
