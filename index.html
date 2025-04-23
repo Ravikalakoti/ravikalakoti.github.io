@@ -1,225 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravi Singh Kalakoti - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Basic Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        header h1 {
-            font-size: 3em;
-        }
-
-        /* Profile Section */
-        .profile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-
-        .profile h2 {
-            font-size: 2em;
-            color: #333;
-        }
-
-        .profile p {
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        /* Experience & Skills Section */
-        .experience-skills {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .experience, .skills {
-            width: 40%;
-        }
-
-        .section-title {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-content {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* Project Count Section */
-        .project-count {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .project-count div {
-            width: 150px;
-            margin: 10px;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-count div h3 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .project-count div p {
-            font-size: 1.1em;
-        }
-
-        /* Contact Section */
-        .contact {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .contact div {
-            width: 300px;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .contact div h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .contact div p {
-            font-size: 1.2em;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            font-size: 1.1em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ravi Singh Kalakoti - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4e73df;
+    }
+    h1 {
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    p.subtitle {
+      color: #6c757d;
+      font-size: 1rem;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .skill {
+      background: #4e73df;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+    }
+    .project-count {
+      font-size: 2rem;
+      color: #4e73df;
+      margin-top: 1rem;
+    }
+    .contact {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+    a {
+      color: #4e73df;
+      text-decoration: none;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <img src="your-image.jpg" alt="Ravi Singh Kalakoti" class="profile-img" />
+    <h1>Ravi Singh Kalakoti</h1>
+    <p class="subtitle">Python Django Developer | 4+ Years Experience</p>
 
-    <!-- Header -->
-    <header>
-        <h1>Ravi Singh Kalakoti</h1>
-        <p>Python Django Developer</p>
-    </header>
-
-    <!-- Profile Section -->
-    <div class="profile">
-        <img src="profile.jpg" alt="Ravi Singh Kalakoti"> <!-- Replace with your image path -->
-        <h2>Ravi Singh Kalakoti</h2>
-        <p>Python Django Developer | 4 Years of Experience</p>
+    <div class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">Django</div>
+        <div class="skill">Django REST Framework</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">PostgreSQL</div>
+        <div class="skill">Docker</div>
+        <div class="skill">AWS S3</div>
+      </div>
     </div>
 
-    <!-- Experience & Skills Section -->
-    <div class="experience-skills">
-        <div class="experience">
-            <div class="section-title">Experience</div>
-            <div class="section-content">
-                <p>4 years of experience working with Python, Django, and RESTful API development. Proficient in building scalable applications and integrating third-party services.</p>
-            </div>
-        </div>
-
-        <div class="skills">
-            <div class="section-title">Skills</div>
-            <div class="section-content">
-                <ul>
-                    <li>Python</li>
-                    <li>Django</li>
-                    <li>Django REST Framework</li>
-                    <li>PostgreSQL</li>
-                    <li>MySQL</li>
-                    <li>Docker</li>
-                    <li>Git</li>
-                    <li>CI/CD</li>
-                </ul>
-            </div>
-        </div>
+    <div class="section">
+      <h2>Projects Completed</h2>
+      <div class="project-count">10+ Projects</div>
     </div>
 
-    <!-- Project Count Section -->
-    <div class="project-count">
-        <div>
-            <h3>15+</h3>
-            <p>Projects Completed</p>
-        </div>
-        <div>
-            <h3>5+</h3>
-            <p>Client Projects</p>
-        </div>
+    <div class="section contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a></p>
+      <p>Phone: +91 7060474650</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/ravi-kalakoti">linkedin.com/in/ravi-kalakoti</a></p>
     </div>
-
-    <!-- Contact Section -->
-    <div class="contact">
-        <div>
-            <h3>Contact</h3>
-            <p>Email: ravikalakoti16@gmail.com</p>
-            <p>Phone: +91 7060474650</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Ravi Singh Kalakoti | Python Django Developer</p>
-    </footer>
-
+  </div>
 </body>
-
 </html>
