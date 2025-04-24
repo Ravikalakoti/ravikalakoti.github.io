@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Ravi Singh Kalakoti, Python Django Developer with 4+ years of experience and 10+ projects in web development and REST APIs.">
-    <meta name="keywords" content="Ravi Singh Kalakoti, Python, Django, REST API, Web Developer, Noida">
+    <meta name="description" content="Portfolio of Ravi Singh Kalakoti, Python Django Developer with 4+ years of experience and 10+ projects in web development, REST APIs, and employee assessment tools.">
+    <meta name="keywords" content="Ravi Singh Kalakoti, Python, Django, REST API, Web Developer, Noida, AWS, Neptune">
+    <meta property="og:title" content="Ravi Singh Kalakoti - Portfolio">
+    <meta property="og:description" content="Python Django Developer with 4+ years of experience, delivering 10+ projects including employee assessment tools, e-commerce platforms, and HR solutions.">
+    <meta property="og:image" content="profile.jpg">
     <title>Ravi Singh Kalakoti - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -30,6 +34,15 @@
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
         header::before {
             content: '';
             position: absolute;
@@ -39,6 +52,7 @@
             height: 100%;
             background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
             opacity: 0.3;
+            z-index: 1;
         }
 
         header .profile-pic {
@@ -51,18 +65,23 @@
             margin-bottom: 1.5rem;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: pulse 2s infinite;
+            position: relative;
+            z-index: 2;
         }
 
         header .profile-pic:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px #ff007a, 0 0 60px #00ddeb;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 40px #ff007a, 0 0 80px #00ddeb;
         }
 
         header h1 {
             font-size: 3rem;
             font-weight: 700;
-            text-shadow: 0 0 10px #fff;
-            animation: fadeInDown 1s ease-in;
+            color: #fff;
+            text-shadow: 0 0 10px #ff007a, 0 0 20px #00ddeb;
+            animation: neonGlow 2s infinite alternate;
+            position: relative;
+            z-index: 2;
         }
 
         header p {
@@ -71,6 +90,8 @@
             opacity: 0.9;
             animation: fadeInUp 1s ease-in 0.5s forwards;
             opacity: 0;
+            position: relative;
+            z-index: 2;
         }
 
         nav {
@@ -96,7 +117,7 @@
         nav a:hover {
             color: #ff007a;
             text-shadow: 0 0 10px #ff007a;
-            transform: scale(1.1);
+            transform: scale(1.1) translateY(-2px);
         }
 
         section {
@@ -186,6 +207,7 @@
         .skills-filter button.active {
             transform: scale(1.1);
             box-shadow: 0 0 20px #00ddeb;
+            animation: pulseGlow 1.5s infinite;
         }
 
         .skills {
@@ -268,9 +290,10 @@
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #fff;
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         .project-card p {
@@ -288,6 +311,28 @@
 
         .project-card a:hover {
             text-decoration: underline;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-tags span {
+            background: #00ddeb;
+            color: #1a1a1a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-tags span:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #00ddeb;
         }
 
         .modal {
@@ -313,6 +358,8 @@
             box-shadow: 0 0 30px #ff007a;
             position: relative;
             text-align: center;
+            animation: modalFade 0.5s ease-in;
+            border: 2px solid #ff007a;
         }
 
         .modal-content img {
@@ -321,6 +368,11 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .modal-content img:hover {
+            transform: scale(1.02);
         }
 
         .modal-content h3 {
@@ -439,10 +491,26 @@
             100% { box-shadow: 0 0 20px #ff007a, 0 0 40px #00ddeb; }
         }
 
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 10px #ff007a, 0 0 20px #00ddeb; }
+            100% { text-shadow: 0 0 20px #ff007a, 0 0 30px #00ddeb; }
+        }
+
         @keyframes neonBorder {
             0% { border-color: #ff007a; }
             50% { border-color: #00ddeb; }
             100% { border-color: #ff007a; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px #00ddeb; }
+            50% { box-shadow: 0 0 20px #00ddeb; }
+            100% { box-shadow: 0 0 10px #00ddeb; }
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         @media (max-width: 768px) {
@@ -477,6 +545,7 @@
 </head>
 <body>
     <header>
+        <div id="particles-js"></div>
         <img src="profile.jpg" alt="Ravi Singh Kalakoti" class="profile-pic" onerror="this.src='https://via.placeholder.com/160?text=Profile+Pic';">
         <h1>Ravi Singh Kalakoti</h1>
         <p id="typing-text"></p>
@@ -493,7 +562,7 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <p>
-            I'm Ravi Singh Kalakoti, a dynamic Python Django developer with over 4 years of experience architecting scalable web applications and cutting-edge RESTful APIs. Based in Noida, India, I transform ideas into reality with clean, efficient code and seamless third-party integrations. Having powered 10+ innovative projects for global clients across Germany, America, and Australia, I’m driven to create solutions that redefine user experiences. Let’s build the future of the web together!
+            I’m Ravi Singh Kalakoti, a passionate Python Django Developer with 4+ years of experience delivering scalable, high-performance web applications and APIs for global clients, blending clean code, smart architecture, and a drive to build solutions that truly make an impact.
         </p>
     </section>
 
@@ -530,18 +599,39 @@
             <span data-category="tools">SendGrid</span>
             <span data-category="tools">Bitbucket</span>
             <span data-category="tools">Pandas</span>
+            <span data-category="tools">AWS</span>
+            <span data-category="tools">Neptune</span>
+            <span data-category="tools">Git</span>
         </div>
     </section>
 
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
+            <div class="project-card" data-project="assessment">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Assessment Tool" onerror="this.src='https://via.placeholder.com/320x200?text=Assessment+Tool';">
+                <div class="project-card-content">
+                    <h3>Assessment Tool for Takeda</h3>
+                    <p>Employee assessment platform for Takeda with grading and analytics, using AWS LLM and Neptune.</p>
+                    <a href="https://takeda-assessment.example.com/" target="_blank" aria-label="View Assessment Tool">View Project</a>
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>AWS</span>
+                        <span>Neptune</span>
+                    </div>
+                </div>
+            </div>
             <div class="project-card" data-project="veridoc">
-                <img src="https://images.unsplash.com/photo-1516321310764-8081e57d3b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Veridoc Global" onerror="this.src='https://via.placeholder.com/320x200?text=Veridoc+Global';">
+                <img src="https://images.unsplash.com/photo-1555949988-7e1d0e9f7feb?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Veridoc Global" onerror="this.src='https://via.placeholder.com/320x200?text=Veridoc+Global';">
                 <div class="project-card-content">
                     <h3>Veridoc Global</h3>
                     <p>Document verification platform with REST APIs and SendGrid integration.</p>
                     <a href="https://my.veridochr.com/" target="_blank" aria-label="View Veridoc Global">View Project</a>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SendGrid</span>
+                    </div>
                 </div>
             </div>
             <div class="project-card" data-project="breadkrumb">
@@ -550,6 +640,11 @@
                     <h3>Breadkrumb iOS App</h3>
                     <p>An app to save memorable locations with notes, powered by Django APIs.</p>
                     <a href="https://apps.apple.com/us/app/breadkrumb/id6444889553" target="_blank" aria-label="View Breadkrumb App">View App</a>
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>REST API</span>
+                        <span>PostgreSQL</span>
+                    </div>
                 </div>
             </div>
             <div class="project-card" data-project="contrax">
@@ -558,14 +653,24 @@
                     <h3>Contrax</h3>
                     <p>Web app for property legal services, built with Django and REST APIs.</p>
                     <a href="https://dev.contrax.com.au/" target="_blank" aria-label="View Contrax">View Project</a>
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                    </div>
                 </div>
             </div>
             <div class="project-card" data-project="petrimedca">
-                <img src="https://images.unsplash.com/photo-1556740720-776b84291f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Petrimedca" onerror="this.src='https://via.placeholder.com/320x200?text=Petrimedca';">
+                <img src="https://images.unsplash.com/photo-1665686306574-1a2766cae31b?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Petrimedca" onerror="this.src='https://via.placeholder.com/320x200?text=Petrimedca';">
                 <div class="project-card-content">
                     <h3>Petrimedca</h3>
                     <p>E-commerce platform with Shiprocket and Razorpay integration.</p>
                     <a href="https://www.petrimedca.com/" target="_blank" aria-label="View Petrimedca">View Project</a>
+                    <div class="project-tags">
+                        <span>Django</span>
+                        <span>Razorpay</span>
+                        <span>Shiprocket</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -591,7 +696,7 @@
 
     <div id="project-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <img id="modal-image" src="" alt="">
             <h3 id="modal-title"></h3>
             <p id="modal-description"></p>
@@ -605,6 +710,24 @@
     </footer>
 
     <script>
+        // Particles.js background
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ff007a', '#00ddeb'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 2, direction: 'none', random: true }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            }
+        });
+
         // Typing effect for header subtitle
         const text = "Python Django Developer | Building the Future of Web";
         let index = 0;
@@ -658,7 +781,7 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const section = document.querySelector(this.getAttribute('href'));
-                const offset = 80; // Adjust for sticky nav height
+                const offset = 80;
                 window.scrollTo({
                     top: section.offsetTop - offset,
                     behavior: 'smooth'
@@ -688,12 +811,19 @@
         const closeModal = document.querySelector('.close');
 
         const projectData = {
+            assessment: {
+                title: 'Assessment Tool for Takeda',
+                description: 'A web platform for Takeda to manage employee performance assessments with grading and analytics. Built with Django REST Framework and integrated with AWS Bedrock LLM for intelligent feedback and Neptune for experiment tracking.',
+                tech: 'Python, Django REST Framework, JavaScript, Bootstrap, AWS Bedrock LLM, Neptune, Git, PostgreSQL',
+                link: 'https://takeda-assessment.example.com/',
+                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+            },
             veridoc: {
                 title: 'Veridoc Global',
-                description: 'A secure document verification platform leveraging REST APIs and SendGrid for seamless communication.',
+                description: 'A secure document verification platform for HR, leveraging REST APIs and SendGrid for seamless communication.',
                 tech: 'Python, Django, REST API, SendGrid, MySQL',
                 link: 'https://my.veridochr.com/',
-                image: 'https://images.unsplash.com/photo-1516321310764-8081e57d3b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+                image: 'https://images.unsplash.com/photo-1555949988-7e1d0e9f7feb?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
             },
             breadkrumb: {
                 title: 'Breadkrumb iOS App',
@@ -714,7 +844,7 @@
                 description: 'An e-commerce platform with Shiprocket and Razorpay integrations for seamless transactions.',
                 tech: 'Python, Django, REST API, Razorpay, Shiprocket',
                 link: 'https://www.petrimedca.com/',
-                image: 'https://images.unsplash.com/photo-1556740720-776b84291f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+                image: 'https://images.unsplash.com/photo-1665686306574-1a2766cae31b?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
             }
         };
 
