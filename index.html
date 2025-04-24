@@ -6,6 +6,7 @@
     <meta name="description" content="Portfolio of Ravi Singh Kalakoti, Python Django Developer with 4+ years of experience and 10+ projects in web development and REST APIs.">
     <meta name="keywords" content="Ravi Singh Kalakoti, Python, Django, REST API, Web Developer, Noida">
     <title>Ravi Singh Kalakoti - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -89,12 +90,13 @@
             margin: 0 1.5rem;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: color 0.3s, text-shadow 0.3s;
+            transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
         }
 
         nav a:hover {
             color: #ff007a;
             text-shadow: 0 0 10px #ff007a;
+            transform: scale(1.1);
         }
 
         section {
@@ -161,6 +163,31 @@
             color: #ddd;
         }
 
+        .skills-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .skills-filter button {
+            background: #00ddeb;
+            color: #1a1a1a;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skills-filter button:hover,
+        .skills-filter button.active {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00ddeb;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -181,7 +208,7 @@
         }
 
         .skills span:hover {
-            transform: scale(1.1);
+            transform: rotate(5deg) scale(1.1);
             box-shadow: 0 0 20px #00ddeb;
         }
 
@@ -197,12 +224,31 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .project-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 0 30px #ff007a;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .project-card:hover::before {
+            border-color: #ff007a;
+            animation: neonBorder 1.5s infinite;
         }
 
         .project-card img {
@@ -244,6 +290,82 @@
             text-decoration: underline;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 30px #ff007a;
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content .tech-stack {
+            font-size: 0.9rem;
+            color: #00ddeb;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content a {
+            color: #ff007a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .modal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #ff007a;
+        }
+
         .contact {
             background: rgba(255,255,255,0.1);
             border-radius: 15px;
@@ -263,6 +385,28 @@
         .contact a:hover {
             text-decoration: underline;
             text-shadow: 0 0 10px #00ddeb;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #ff007a;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 0 10px #ff007a;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ff007a;
         }
 
         footer {
@@ -295,6 +439,12 @@
             100% { box-shadow: 0 0 20px #ff007a, 0 0 40px #00ddeb; }
         }
 
+        @keyframes neonBorder {
+            0% { border-color: #ff007a; }
+            50% { border-color: #00ddeb; }
+            100% { border-color: #ff007a; }
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2rem;
@@ -318,22 +468,26 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .modal-content {
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="profile.jpg" alt="Ravi Singh Kalakoti" class="profile-pic">
+        <img src="profile.jpg" alt="Ravi Singh Kalakoti" class="profile-pic" onerror="this.src='https://via.placeholder.com/160?text=Profile+Pic';">
         <h1>Ravi Singh Kalakoti</h1>
         <p id="typing-text"></p>
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#stats">Stats</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" aria-label="About Section">About</a>
+        <a href="#stats" aria-label="Stats Section">Stats</a>
+        <a href="#skills" aria-label="Skills Section">Skills</a>
+        <a href="#projects" aria-label="Projects Section">Projects</a>
+        <a href="#contact" aria-label="Contact Section">Contact</a>
     </nav>
 
     <section id="about" class="about">
@@ -347,11 +501,11 @@
         <h2>My Journey</h2>
         <div class="stats">
             <div class="stat-card">
-                <h3 class="counter" data-target="4.3">4.3</h3>
+                <h3 class="counter" data-target="4.3" data-delay="0">0</h3>
                 <p>Years of Experience</p>
             </div>
             <div class="stat-card">
-                <h3 class="counter" data-target="10">0</h3>
+                <h3 class="counter" data-target="10" data-delay="500">0</h3>
                 <p>Projects Completed</p>
             </div>
         </div>
@@ -359,53 +513,59 @@
 
     <section id="skills">
         <h2>Key Skills</h2>
+        <div class="skills-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="tools">Tools</button>
+        </div>
         <div class="skills">
-            <span>Python</span>
-            <span>Django</span>
-            <span>REST API</span>
-            <span>MySQL</span>
-            <span>PostgreSQL</span>
-            <span>JavaScript</span>
-            <span>Bootstrap</span>
-            <span>SendGrid</span>
-            <span>Bitbucket</span>
-            <span>Pandas</span>
+            <span data-category="backend">Python</span>
+            <span data-category="backend">Django</span>
+            <span data-category="backend">REST API</span>
+            <span data-category="backend">MySQL</span>
+            <span data-category="backend">PostgreSQL</span>
+            <span data-category="frontend">JavaScript</span>
+            <span data-category="frontend">Bootstrap</span>
+            <span data-category="tools">SendGrid</span>
+            <span data-category="tools">Bitbucket</span>
+            <span data-category="tools">Pandas</span>
         </div>
     </section>
 
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1551288049-b1f3c6d4a947?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Veridoc Global">
+            <div class="project-card" data-project="veridoc">
+                <img src="https://images.unsplash.com/photo-1516321310764-8081e57d3b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Veridoc Global" onerror="this.src='https://via.placeholder.com/320x200?text=Veridoc+Global';">
                 <div class="project-card-content">
                     <h3>Veridoc Global</h3>
                     <p>Document verification platform with REST APIs and SendGrid integration.</p>
-                    <a href="https://my.veridochr.com/" target="_blank">View Project</a>
+                    <a href="https://my.veridochr.com/" target="_blank" aria-label="View Veridoc Global">View Project</a>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Breadkrumb">
+            <div class="project-card" data-project="breadkrumb">
+                <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Breadkrumb" onerror="this.src='https://via.placeholder.com/320x200?text=Breadkrumb';">
                 <div class="project-card-content">
                     <h3>Breadkrumb iOS App</h3>
-                    <p>An app to plan trips locations with notes, powered by Django APIs.</p>
-                    <a href="https://apps.apple.com/us/app/breadkrumb/id6444889553" target="_blank">View App</a>
+                    <p>An app to save memorable locations with notes, powered by Django APIs.</p>
+                    <a href="https://apps.apple.com/us/app/breadkrumb/id6444889553" target="_blank" aria-label="View Breadkrumb App">View App</a>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Contrax">
+            <div class="project-card" data-project="contrax">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Contrax" onerror="this.src='https://via.placeholder.com/320x200?text=Contrax';">
                 <div class="project-card-content">
                     <h3>Contrax</h3>
                     <p>Web app for property legal services, built with Django and REST APIs.</p>
-                    <a href="https://dev.contrax.com.au/" target="_blank">View Project</a>
+                    <a href="https://dev.contrax.com.au/" target="_blank" aria-label="View Contrax">View Project</a>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1556740714-7c4b6f82e1d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Petrimedca">
+            <div class="project-card" data-project="petrimedca">
+                <img src="https://images.unsplash.com/photo-1556740720-776b84291f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80" alt="Petrimedca" onerror="this.src='https://via.placeholder.com/320x200?text=Petrimedca';">
                 <div class="project-card-content">
                     <h3>Petrimedca</h3>
                     <p>E-commerce platform with Shiprocket and Razorpay integration.</p>
-                    <a href="https://www.petrimedca.com/" target="_blank">View Project</a>
+                    <a href="https://www.petrimedca.com/" target="_blank" aria-label="View Petrimedca">View Project</a>
                 </div>
             </div>
         </div>
@@ -415,17 +575,30 @@
     <section id="contact" class="contact">
         <h2>Get in Touch</h2>
         <p>
-            Email: <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a> |
-            Phone: <a href="tel:+917060474650">+91 7060474650</a>
+            Email: <a href="mailto:ravikalakoti16@gmail.com" aria-label="Email Ravi">ravikalakoti16@gmail.com</a> |
+            Phone: <a href="tel:+917060474650" aria-label="Call Ravi">+91 7060474650</a>
         </p>
         <p>
-            LinkedIn: <a href="https://www.linkedin.com/in/ravi-kalakoti" target="_blank">linkedin.com/in/ravi-kalakoti</a> |
-            GitHub: <a href="https://github.com/ravikalakoti" target="_blank">github.com/ravikalakoti</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/ravi-kalakoti" target="_blank" aria-label="Ravi's LinkedIn">linkedin.com/in/ravi-kalakoti</a> |
+            GitHub: <a href="https://github.com/ravikalakoti" target="_blank" aria-label="Ravi's GitHub">github.com/ravikalakoti</a>
         </p>
         <p>
-            <a href="[Your Resume URL]" target="_blank">Download Resume</a>
+            <a href="[Your Resume URL]" target="_blank" aria-label="Download Resume">Download Resume</a>
         </p>
     </section>
+
+    <button class="back-to-top" aria-label="Back to Top">↑</button>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <p id="modal-tech" class="tech-stack"></p>
+            <a id="modal-link" href="" target="_blank">Visit Project</a>
+        </div>
+    </div>
 
     <footer>
         <p>© 2025 Ravi Singh Kalakoti. All rights reserved.</p>
@@ -445,7 +618,7 @@
         }
         window.onload = type;
 
-        // Animated counter for stats
+        // Animated counter for stats with delay
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
             const updateCounter = () => {
@@ -459,7 +632,7 @@
                     counter.innerText = target === 10 ? '10+' : target;
                 }
             };
-            updateCounter();
+            setTimeout(updateCounter, counter.getAttribute('data-delay'));
         });
 
         // Scroll-triggered animations
@@ -478,6 +651,105 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s, transform 0.5s';
             observer.observe(el);
+        });
+
+        // Smooth scrolling with offset
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                const offset = 80; // Adjust for sticky nav height
+                window.scrollTo({
+                    top: section.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Skills filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const skills = document.querySelectorAll('.skills span');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                skills.forEach(skill => {
+                    const category = skill.getAttribute('data-category');
+                    skill.style.display = (filter === 'all' || category === filter) ? 'inline-block' : 'none';
+                });
+            });
+        });
+
+        // Project modals
+        const modal = document.getElementById('project-modal');
+        const projectCards = document.querySelectorAll('.project-card');
+        const closeModal = document.querySelector('.close');
+
+        const projectData = {
+            veridoc: {
+                title: 'Veridoc Global',
+                description: 'A secure document verification platform leveraging REST APIs and SendGrid for seamless communication.',
+                tech: 'Python, Django, REST API, SendGrid, MySQL',
+                link: 'https://my.veridochr.com/',
+                image: 'https://images.unsplash.com/photo-1516321310764-8081e57d3b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+            },
+            breadkrumb: {
+                title: 'Breadkrumb iOS App',
+                description: 'An innovative app to save memorable locations with notes, powered by Django REST APIs.',
+                tech: 'Python, Django, REST API, PostgreSQL',
+                link: 'https://apps.apple.com/us/app/breadkrumb/id6444889553',
+                image: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+            },
+            contrax: {
+                title: 'Contrax',
+                description: 'A web app for streamlined property legal services, built with Django and REST APIs.',
+                tech: 'Python, Django, REST API, JavaScript, Bootstrap',
+                link: 'https://dev.contrax.com.au/',
+                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+            },
+            petrimedca: {
+                title: 'Petrimedca',
+                description: 'An e-commerce platform with Shiprocket and Razorpay integrations for seamless transactions.',
+                tech: 'Python, Django, REST API, Razorpay, Shiprocket',
+                link: 'https://www.petrimedca.com/',
+                image: 'https://images.unsplash.com/photo-1556740720-776b84291f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200&q=80'
+            }
+        };
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const project = card.getAttribute('data-project');
+                const data = projectData[project];
+                document.getElementById('modal-image').src = data.image;
+                document.getElementById('modal-title').textContent = data.title;
+                document.getElementById('modal-description').textContent = data.description;
+                document.getElementById('modal-tech').textContent = `Tech Stack: ${data.tech}`;
+                document.getElementById('modal-link').href = data.link;
+                document.getElementById('modal-link').textContent = `Visit ${data.title}`;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
