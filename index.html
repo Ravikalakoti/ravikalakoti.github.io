@@ -3,47 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravi Singh Kalakoti - Python Django Developer</title>
+    <meta name="description" content="Portfolio of Ravi Singh Kalakoti, Python Django Developer with expertise in REST APIs and web applications.">
+    <title>Ravi Singh Kalakoti - Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
 
         body {
-            line-height: 1.6;
             color: #333;
+            background: #f4f7fa;
         }
 
         header {
-            background: #2c3e50;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        header .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            opacity: 0.9;
         }
 
         nav {
-            background: #34495e;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
             text-align: center;
         }
 
         nav a {
-            color: white;
+            color: #2c3e50;
             text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav a:hover {
@@ -51,46 +69,110 @@
         }
 
         section {
-            padding: 2rem;
-            max-width: 1000px;
+            padding: 3rem 1rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
             color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .skills ul {
-            list-style: none;
+        .about, .contact {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
         }
 
-        .skills li {
+        .skills span {
             background: #3498db;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
         }
 
-        .experience-item, .education-item, .project-item, .certification-item {
-            margin-bottom: 1.5rem;
+        .skills span:hover {
+            transform: scale(1.05);
         }
 
-        .experience-item h3, .education-item h3, .project-item h3, .certification-item h3 {
-            font-size: 1.5rem;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .project-card-content {
+            padding: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
             color: #2c3e50;
+            margin-bottom: 0.5rem;
         }
 
-        .contact a, .links a {
+        .project-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
             color: #3498db;
             text-decoration: none;
+            font-weight: 600;
         }
 
-        .contact a:hover, .links a:hover {
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        .contact a:hover {
             text-decoration: underline;
         }
 
@@ -98,10 +180,8 @@
             background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 1.5rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
@@ -109,161 +189,110 @@
                 font-size: 2rem;
             }
 
+            header .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
             nav a {
                 display: block;
-                margin: 0.5rem 0;
+                margin: 0.8rem 0;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="profile.jpg" alt="Ravi Singh Kalakoti" class="profile-pic">
         <h1>Ravi Singh Kalakoti</h1>
-        <p>Python Django Developer | Noida, India</p>
+        <p>Python Django Developer | Crafting Scalable Web Solutions</p>
     </header>
 
     <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <section id="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
         <p>
-            With over 4 years of experience as a Python Django web developer, I have a strong track record in developing and deploying web applications, with expertise in building RESTful APIs. I am passionate about writing clean, maintainable code and continuously expanding my technical expertise. I seek opportunities in dynamic, forward-thinking organizations that embrace diversity and foster growth.
+            I'm a passionate Python Django developer with over 4 years of experience building robust web applications and RESTful APIs. Based in Noida, India, I specialize in creating clean, maintainable code and integrating third-party APIs for seamless functionality. Let's build something amazing together!
         </p>
     </section>
 
-    <section id="skills" class="skills">
+    <section id="skills">
         <h2>Key Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>Django</li>
-            <li>REST API Development</li>
-            <li>MySQL</li>
-            <li>PostgreSQL</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Bootstrap</li>
-            <li>AJAX</li>
-            <li>SendGrid</li>
-            <li>Bitbucket</li>
-            <li>NumPy</li>
-            <li>Pandas</li>
-            <li>Matplotlib</li>
-            <li>Celery</li>
-            <li>Tkinter</li>
-            <li>Data Analytics</li>
-        </ul>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <h3>Python Django Developer - Technoarch Softwares Pvt Ltd</h3>
-            <p><em>Dec 2020 - Present (4 years 5 months)</em></p>
-            <ul>
-                <li>Developed RESTful APIs using Django framework for scalable web applications.</li>
-                <li>Built web applications using Django and frontend technologies (HTML, CSS, JavaScript, Bootstrap).</li>
-                <li>Integrated payment gateways and third-party APIs (e.g., Shiprocket, Razorpay) into Django applications.</li>
-                <li>Managed and optimized databases (MySQL, PostgreSQL) for performance and reliability.</li>
-            </ul>
-            <p><em>Notice Period: 1 Month</em></p>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-            <h3>B.Tech in Mechanical Engineering - Dev Bhoomi Institute of Technology and Engineering</h3>
-            <p><em>2016 - 2019</em></p>
-        </div>
-        <div class="education-item">
-            <h3>Class XII</h3>
-            <p><em>2013</em></p>
-        </div>
-        <div class="education-item">
-            <h3>Class X</h3>
-            <p><em>2011</em></p>
+        <div class="skills">
+            <span>Python</span>
+            <span>Django</span>
+            <span>REST API</span>
+            <span>MySQL</span>
+            <span>PostgreSQL</span>
+            <span>JavaScript</span>
+            <span>Bootstrap</span>
+            <span>SendGrid</span>
+            <span>Bitbucket</span>
+            <span>Pandas</span>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-item">
-            <h3>Assessment Tool - Takeda (Germany)</h3>
-            <p><em>Jul 2024 - Present</em></p>
-            <p>Developed an employee assessment tool to evaluate skills and assign management levels based on scores.</p>
-        </div>
-        <div class="project-item">
-            <h3>Veridoc Global - Veridoc Global</h3>
-            <p><em>Jun 2024 - Present</em></p>
-            <p>Contributed to a document verification platform, integrating REST APIs and SendGrid.</p>
-            <p><a href="https://my.veridochr.com/" target="_blank">View Project</a></p>
-        </div>
-        <div class="project-item">
-            <h3>Breadkrumb - Sho (America)</h3>
-            <p><em>Jan 2023 - Present</em></p>
-            <p>Built an iOS app to capture and store memorable locations with notes, using Django for backend APIs.</p>
-            <p><a href="https://apps.apple.com/us/app/breadkrumb/id6444889553" target="_blank">View App</a></p>
-        </div>
-        <div class="project-item">
-            <h3>Contrax - Contrax (Australia)</h3>
-            <p><em>Dec 2021 - Present</em></p>
-            <p>Developed a web application for property legal services, streamlining processes with Django and REST APIs.</p>
-            <p><a href="https://dev.contrax.com.au/" target="_blank">View Project</a></p>
-        </div>
-        <div class="project-item">
-            <h3>United Global Security - United Global Security</h3>
-            <p><em>Nov 2021 - Oct 2023</em></p>
-            <p>Created a security app for shift scheduling, site tours, and incident reporting, with a Django backend.</p>
-            <p><a href="https://sp.opskube.com" target="_blank">View Project</a></p>
-        </div>
-        <div class="project-item">
-            <h3>Petrimedca - River Engineering</h3>
-            <p><em>Apr 2020 - Aug 2020</em></p>
-            <p>Developed an e-commerce web application using Django, Shiprocket for inventory, and Razorpay for payments.</p>
-            <p><a href="https://www.petrimedca.com/" target="_blank">View Project</a></p>
-        </div>
-    </section>
-
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certification-item">
-            <h3>Python Language - Ducat Noida</h3>
-            <p><em>Jan 2020</em></p>
-        </div>
-        <div class="certification-item">
-            <h3>Django - Ducat Noida</h3>
-            <p><em>Jan 2020</em></p>
-        </div>
-        <div class="certification-item">
-            <h3>Certificate of Appreciation - Uttarakhand Transport Corporation</h3>
-            <p><em>Validity: Not mentioned</em></p>
-        </div>
-        <div class="certification-item">
-            <h3>Certificate of Participation (SEATS)</h3>
-            <p><em>Validity: Not mentioned</em></p>
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180?text=Veridoc+Global" alt="Veridoc Global">
+                <div class="project-card-content">
+                    <h3>Veridoc Global</h3>
+                    <p>Document verification platform with REST APIs and SendGrid integration.</p>
+                    <a href="https://my.veridochr.com/" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180?text=Breadkrumb" alt="Breadkrumb">
+                <div class="project-card-content">
+                    <h3>Breadkrumb iOS App</h3>
+                    <p>An app to save memorable locations with notes, powered by Django APIs.</p>
+                    <a href="https://apps.apple.com/us/app/breadkrumb/id6444889553" target="_blank">View App</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180?text=Contrax" alt="Contrax">
+                <div class="project-card-content">
+                    <h3>Contrax</h3>
+                    <p>Web app for property legal services, built with Django and REST APIs.</p>
+                    <a href="https://dev.contrax.com.au/" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x180?text=Petrimedca" alt="Petrimedca">
+                <div class="project-card-content">
+                    <h3>Petrimedca</h3>
+                    <p>E-commerce platform with Shiprocket and Razorpay integration.</p>
+                    <a href="https://www.petrimedca.com/" target="_blank">View Project</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a></p>
-        <p>Phone: +91 7060474650</p>
-        <p>Address: Vil-post-Bageshwar, Bageshwar, 263634, India</p>
-    </section>
-
-    <section id="links" class="links">
-        <h2>Professional Links</h2>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ravi-kalakoti" target="_blank">linkedin.com/in/ravi-kalakoti</a></p>
-        <p>GitHub: <a href="https://github.com/ravikalakoti" target="_blank">github.com/ravikalakoti</a></p>
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>
+            Email: <a href="mailto:ravikalakoti16@gmail.com">ravikalakoti16@gmail.com</a> |
+            Phone: <a href="tel:+917060474650">+91 7060474650</a>
+        </p>
+        <p>
+            LinkedIn: <a href="https://www.linkedin.com/in/ravi-kalakoti" target="_blank">linkedin.com/in/ravi-kalakoti</a> |
+            GitHub: <a href="https://github.com/ravikalakoti" target="_blank">github.com/ravikalakoti</a>
+        </p>
+        <p>
+            <a href="[Your Resume URL]" target="_blank">Download Resume</a>
+        </p>
     </section>
 
     <footer>
